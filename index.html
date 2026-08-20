@@ -15,7 +15,7 @@
   header {
     background: #2E1F10;
     color: #F3E5C8;
-    padding: 18px 24px;
+    padding: 18px 24px 14px;
     text-align: center;
     border-bottom: 4px solid #B39A70;
   }
@@ -24,21 +24,29 @@
   .toolbar {
     background: #21130a;
     text-align: center;
-    padding: 10px;
+    padding: 12px 10px;
     border-bottom: 2px solid #B39A70;
   }
-  .toolbar a {
+  .toolbar a, .toolbar button {
     display: inline-block;
     background: #B39A70;
     color: #2E1F10;
     text-decoration: none;
-    padding: 8px 18px;
+    padding: 8px 16px;
     border-radius: 4px;
     font-weight: bold;
     font-size: 14px;
-    margin: 0 4px;
+    margin: 3px 4px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    font-family: 'Georgia', serif;
   }
   .toolbar a:hover { background: #F3E5C8; }
+  .lang-btn.active {
+    background: #2E1F10;
+    color: #F3E5C8;
+    border-color: #B39A70;
+  }
   .paper {
     max-width: 900px;
     margin: 24px auto;
@@ -66,14 +74,29 @@
     <p>ANALISTA DE DADOS E I.A · CIÊNCIA DE DADOS — PUC CAMPINAS · CCI GRIS</p>
   </header>
   <div class="toolbar">
-    <a href="Curriculo_JoaoVitor.pdf" target="_blank" rel="noopener">⬇️ Baixar PDF</a>
+    <button class="lang-btn active" data-lang="pt" onclick="trocarIdioma('pt')">🇧🇷 Português</button>
+    <button class="lang-btn" data-lang="en" onclick="trocarIdioma('en')">🇺🇸 English</button>
+    <a href="Curriculo_JoaoVitor_PTBR.pdf" target="_blank" rel="noopener">⬇️ Baixar PDF</a>
     <a href="https://github.com/JayV1I" target="_blank" rel="noopener">🐙 Ver meu GitHub</a>
   </div>
   <div class="paper">
-    <iframe src="Curriculo_JoaoVitor.pdf" title="Currículo de João Vitor"></iframe>
+    <iframe id="cv-frame" src="Curriculo_JoaoVitor_PTBR.pdf" title="Currículo de João Vitor"></iframe>
   </div>
   <footer>
     Desenhado à mão em preto e branco • Est. 2026 • @JayV1I
   </footer>
+  <script>
+    function trocarIdioma(lang) {
+      var frame = document.getElementById('cv-frame');
+      if (lang === 'pt') {
+        frame.src = 'Curriculo_JoaoVitor_PTBR.pdf';
+      } else {
+        frame.src = 'Curriculo_JoaoVitor_EN.pdf';
+      }
+      document.querySelectorAll('.lang-btn').forEach(function(btn) {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+    }
+  </script>
 </body>
 </html>
