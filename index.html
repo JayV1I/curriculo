@@ -7,53 +7,55 @@
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
-    background: #F3E5C8;
-    color: #2E1F10;
+    background: #e0e0e0;
+    color: #000000;
     font-family: 'Georgia', serif;
     min-height: 100vh;
   }
   header {
-    background: #2E1F10;
-    color: #F3E5C8;
-    padding: 18px 24px 14px;
+    background: #000000;
+    color: #ffffff;
+    padding: 20px 24px 16px;
     text-align: center;
-    border-bottom: 4px solid #B39A70;
+    border-bottom: 6px solid #000000;
   }
-  header h1 { font-size: 24px; letter-spacing: 2px; }
-  header p { font-size: 13px; color: #B39A70; margin-top: 4px; letter-spacing: 1px; }
+  header h1 { font-size: 26px; letter-spacing: 2px; }
+  header p { font-size: 14px; color: #888888; margin-top: 6px; letter-spacing: 1px; font-weight: bold; }
   .toolbar {
-    background: #21130a;
+    background: #1a1a1a;
     text-align: center;
-    padding: 12px 10px;
-    border-bottom: 2px solid #B39A70;
+    padding: 15px 10px;
+    border-bottom: 4px solid #000000;
   }
   .toolbar a, .toolbar button {
     display: inline-block;
-    background: #B39A70;
-    color: #2E1F10;
+    background: #ffffff;
+    color: #000000;
     text-decoration: none;
-    padding: 8px 16px;
+    padding: 10px 20px;
     border-radius: 4px;
     font-weight: bold;
-    font-size: 14px;
-    margin: 3px 4px;
-    border: 2px solid transparent;
+    font-size: 15px;
+    margin: 4px 6px;
+    border: 3px solid #000000;
     cursor: pointer;
     font-family: 'Georgia', serif;
+    box-shadow: 4px 4px 0 #000000;
+    transition: all 0.1s;
   }
-  .toolbar a:hover { background: #F3E5C8; }
+  .toolbar a:hover, .toolbar button:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 #000000; }
   .lang-btn.active {
-    background: #2E1F10;
-    color: #F3E5C8;
-    border-color: #B39A70;
+    background: #000000;
+    color: #ffffff;
+    border-color: #888888;
   }
   .paper {
-    max-width: 900px;
-    margin: 24px auto;
+    max-width: 950px;
+    margin: 30px auto;
     background: #ffffff;
-    border: 3px solid #2E1F10;
-    box-shadow: 6px 6px 0 rgba(46,31,16,0.25);
-    padding: 12px;
+    border: 5px solid #000000;
+    box-shadow: 12px 12px 0 rgba(0,0,0,0.2);
+    padding: 10px;
   }
   iframe {
     width: 100%;
@@ -62,9 +64,10 @@
   }
   footer {
     text-align: center;
-    padding: 20px;
-    color: #6b4f30;
-    font-size: 13px;
+    padding: 30px;
+    color: #333333;
+    font-size: 15px;
+    font-weight: bold;
   }
 </style>
 </head>
@@ -77,7 +80,7 @@
     <button class="lang-btn active" data-lang="pt" onclick="trocarIdioma('pt')">🇧🇷 Português</button>
     <button class="lang-btn" data-lang="en" onclick="trocarIdioma('en')">🇺🇸 English</button>
     <a href="Curriculo_JoaoVitor_PTBR.pdf" target="_blank" rel="noopener">⬇️ Baixar PDF</a>
-    <a href="https://github.com/JayV1I" target="_blank" rel="noopener">🐙 Ver meu GitHub</a>
+    <a href="https://jayv1i.github.io/JayV1I/" rel="noopener">🏠 Voltar ao Estúdio</a>
   </div>
   <div class="paper">
     <iframe id="cv-frame" src="Curriculo_JoaoVitor_PTBR.pdf" title="Currículo de João Vitor"></iframe>
